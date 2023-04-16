@@ -1,0 +1,7 @@
+<config>
+	<interface hosts="IEEE_802154_Net.master" address="10.0.0.1" netmask="255.255.x.x"/>
+	<interface hosts="**" address="10.0.x.x" netmask="255.255.x.x"/>
+	<wireless interfaces="IEEE_802154_Net.slave*%wlan0 IEEE_802154_Net.master%wlan0"/>
+	<route hosts="IEEE_802154_Net.master" interface="wlan0" destination="*" gateway="*"/>
+	<route hosts="IEEE_802154_Net.slave*" destination="*" gateway="10.0.0.1"/>
+</config>
